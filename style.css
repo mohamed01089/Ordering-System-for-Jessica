@@ -76,3 +76,59 @@ html {
     font-size: 16px;
     cursor: pointer;
 }
+#open-cart{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    right: auto;
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 999;
+}
+.cart-slidebar{
+    position: fixed;
+    right: -300px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    color: blue;
+    box-shadow: -2px 0 5px black;
+    padding: 20px;
+    transition: right 0.3s;
+}
+.cart-slidebar.active{
+    right: 0;
+}
+.cart-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: blue;
+}
+.close-cart{
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: red;
+}
+.cart-items{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 70%;
+    overflow-y: auto;
+}
+.cart-item{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: lightyellow;
+    border-radius: 4px;
+}
