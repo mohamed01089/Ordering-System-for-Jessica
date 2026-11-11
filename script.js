@@ -47,3 +47,13 @@ function removeFromCart(index) {
 document.querySelector('.close-cart').addEventListener('click', () => {
     cartSidebar.classList.remove('active');
 });
+function checkout(){
+    if (cart.length === 0){
+        alert("Your cart is empty");
+        return;
+    }
+    let total = cart.reduce((sum, item) => sum + item.price, 0);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem("total", total.toFixed(2));
+    window.location.href = "checkout.html";
+}

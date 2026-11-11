@@ -34,3 +34,27 @@ $("#card-cvv").on("blur", function(){
 $("#card-cvv").on("input", function(){
     $(".credit-card-box .ccv div").text($(this).val());
 });
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let total = localStorage.getItem("total") || "0.00";
+let itemsList = document.getElementById("order-items");
+let paymentTotal = document.getElementById("order-total");
+cart.forEach(function(item){
+    let li = document.createElement("li");
+    li.textContent = item.name + "- $" + item.price.toFixed(2);
+    itemsList.appendChild(li);
+});
+paymentTotal.textContent = total;
+document.querySelector(".form").addEventListener("submit", function(event){
+    event.preventDefault();
+    let orders = JSON.parse(localStorage.getItem("orders")) || [];
+    let newOrder = {
+        items:cart,
+        total: total,
+        date: new Date().toLocaleString()
+    };
+    orders.push(newOrder);
+    localStorage.setItem("orders", JSON.stringify(orders));
+    localStorage.removeItem("cart");
+    localStorage.removeItem("total");
+    window.location.href = "orders.html";
+});

@@ -4,6 +4,12 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <nav>
+            <ul>
+                <li><a href="index.html">Menu</a></li>
+                <li><a href="orders.html">Orders</a></li>
+            </ul>
+        </nav>
         <div id="menu">
             <h1 id="section">Menu</h1>
             <div id="menu_row">
@@ -88,7 +94,7 @@
             <div class="cart-total">
                 <strong>Total: $<span id="total">0.00</span></strong>
             </div>
-            <button id="buy" onclick="location.href='checkout.html'">Proceed to checkout</button>
+            <button id="buy" onclick="checkout()">Proceed to checkout</button>
         </div>
         <script src="script.js"></script>
         <button id="open-cart" onclick="openCart()">View Cart</button>
